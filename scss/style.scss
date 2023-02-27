@@ -13,6 +13,15 @@ button {
     background: none;
 }
 
+.label {
+    background-color: #3DC47E;
+    border-radius: 3px;
+    padding: 5px 12px;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 15px;
+}
+
 .header {
     padding: 15px 0;
     background-color: #ffffff;
@@ -49,4 +58,37 @@ button {
     align-items: center;
     justify-content: center;
     gap: 10px;
+}
+
+.slider {
+    position: relative;
+    padding: 90px 0 100px;
+    background: #B4D1E0 url('../img/slider.png') no-repeat center right 25% / contain; // расположить фон по вертикали по центру, по горизонтали с права с отступом //
+
+    &__title {
+        color:  #262D33;
+        font-weight: 700;
+        font-size: 55px;
+        line-height: 70px;
+        font-family: 'Roboto Slab', sans-serif;
+        margin-top: 20px;
+        margin-bottom: 15px;
+
+    }
+
+    &__desc {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 30px;
+        color: #4B5157;
+        max-width: 335px;
+        margin-bottom: 40px;
+    }
+
+    &__nav {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
