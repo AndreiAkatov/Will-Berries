@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    // border: 1px solid red;  
 }
 
 body {
@@ -95,14 +96,53 @@ button {
 }
 
 .card{
+
+    padding: 50px 0 60px;
+
+    &__container {
+        margin-bottom: 30px;
+    }
+
     &__wrapper {
         padding: 60px 46px 80px;
         border-radius: 10px ;
+        height: 100%;   
 
-        &--1 {
-            background: url(../img/card-1.jpg) no-repeat center center / cover;
-            
+        @for $item from 1 through 4 {
+            &--#{$item} {
+                background: url('../img/card-#{$item}.jpg') no-repeat center center / cover;
+            }
         }
+
+        // &--1 {
+        //     background: url(../img/card-1.jpg) no-repeat center center / cover;
+        // }
+
+        // &--2 {
+        //     background: url(../img/card-2.jpg) no-repeat center center / cover;
+        // }
+
+        &--3 {
+            // background: url(../img/card-3.jpg) no-repeat center center / cover;
+            padding: 35px 46px 60px;
+
+            .label {
+                margin-bottom: 30px;
+                display: inline-block;
+            }
+
+            .card__title {
+                margin-bottom: 20px;
+            }
+
+            .card__text {
+                margin-bottom: 40px;
+            }
+        }
+
+        // &--4 {
+        //     background: url(../img/card-4.jpg) no-repeat center center / cover;
+        // }
     }
 
     &__title {
@@ -113,6 +153,10 @@ button {
         font-family: 'Roboto Slab', sans-serif;
         max-width: 220px;
         margin-bottom: 15px;
+
+        &--white {
+            color: #ffffff;
+        }
     }
 
     &__text {
@@ -123,5 +167,66 @@ button {
         font-family: 'Lato', sans-serif;
         max-width: 175px;
         margin-bottom: 25px;
+
+        &--white {
+            color: rgba(255,255,255, 0.85); 
+        }
+
+        &--pink{
+            color: #FFC4C9;
+        }
+    }
+
+    &__price {
+        font-weight: 900;
+        font-size: 14px;
+        line-height: 20px;
+        color: #FFFFFF;
+    }
+}
+
+.goods {
+
+    &__card {
+        padding: 30px 25px 35px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative
+    }
+
+    &__label {
+        position: absolute;
+        top: 18px;
+        left: 18px;
+    }
+
+    &__img {
+        margin-bottom: 15px;
+    }
+
+    &__title {
+        font-family: 'Roboto Slab', sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 25px;
+        color: #262D33;
+        margin-bottom: 5px;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #4B5157;
+        margin-bottom: 20px;
+    }
+
+    &__price {
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 30px;
+        color: #262D33;
     }
 }
