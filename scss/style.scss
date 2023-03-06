@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    // border: 1px solid red;  
 }
 
 body {
@@ -13,6 +14,15 @@ button {
     background: none;
 }
 
+.label {
+    background-color: #3DC47E;
+    border-radius: 3px;
+    padding: 5px 12px;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 15px;
+}
+
 .header {
     padding: 15px 0;
     background-color: #ffffff;
@@ -20,7 +30,7 @@ button {
 
 .nav {
     &__item {
-      list-style-type: none;  
+        list-style-type: none;
     }
 
     &__link {
@@ -31,6 +41,11 @@ button {
         color: #939699;
         letter-spacing: 0.5px;
         text-transform: uppercase;
+
+        &--white {
+            color: #FFFFFF;
+            letter-spacing: normal;
+        }
     }
 }
 
@@ -49,4 +64,244 @@ button {
     align-items: center;
     justify-content: center;
     gap: 10px;
+}
+
+.slider {
+    position: relative;
+    padding: 90px 0 100px;
+    background: #B4D1E0 url('../img/slider.png') no-repeat center right 25% / contain; // расположить фон по вертикали по центру, по горизонтали с права с отступом //
+
+    &__title {
+        color: #262D33;
+        font-weight: 700;
+        font-size: 55px;
+        line-height: 70px;
+        font-family: 'Roboto Slab', sans-serif;
+        margin-top: 20px;
+        margin-bottom: 15px;
+
+    }
+
+    &__desc {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 30px;
+        color: #4B5157;
+        max-width: 335px;
+        margin-bottom: 40px;
+    }
+
+    &__nav {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.5;
+    }
+}
+
+.card {
+
+    padding: 50px 0 60px;
+
+    &__container {
+        margin-bottom: 30px;
+    }
+
+    &__wrapper {
+        padding: 60px 46px 80px;
+        border-radius: 10px;
+        height: 100%;
+
+        @for $item from 1 through 4 {
+            &--#{$item} {
+                background: url('../img/card-#{$item}.jpg') no-repeat center center / cover;
+            }
+        }
+
+        // &--1 {
+        //     background: url(../img/card-1.jpg) no-repeat center center / cover;
+        // }
+
+        // &--2 {
+        //     background: url(../img/card-2.jpg) no-repeat center center / cover;
+        // }
+
+        &--3 {
+            // background: url(../img/card-3.jpg) no-repeat center center / cover;
+            padding: 35px 46px 60px;
+
+            .label {
+                margin-bottom: 30px;
+                display: inline-block;
+            }
+
+            .card__title {
+                margin-bottom: 20px;
+            }
+
+            .card__text {
+                margin-bottom: 40px;
+            }
+        }
+
+        // &--4 {
+        //     background: url(../img/card-4.jpg) no-repeat center center / cover;
+        // }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 30px;
+        color: #262D33;
+        font-family: 'Roboto Slab', sans-serif;
+        max-width: 220px;
+        margin-bottom: 15px;
+
+        &--white {
+            color: #ffffff;
+        }
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #4B5157;
+        font-family: 'Lato', sans-serif;
+        max-width: 175px;
+        margin-bottom: 25px;
+
+        &--white {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        &--pink {
+            color: #FFC4C9;
+        }
+    }
+
+    &__price {
+        font-weight: 900;
+        font-size: 14px;
+        line-height: 20px;
+        color: #FFFFFF;
+    }
+}
+
+.goods {
+
+    &__container {
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    &__title-1 {
+        font-family: 'Roboto Slab', sans-serif;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 30px;
+        color: #262D33;
+        letter-spacing: -1.0px;
+    }
+
+    &__btn {
+        font-family: 'Lato', sans-serif;
+        font-weight: 900;
+        font-size: 14px;
+        line-height: 20px;
+        color: #262D33;
+    }
+
+    &__card {
+        padding: 30px 25px 35px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative
+    }
+
+    &__label {
+        position: absolute;
+        top: 18px;
+        left: 18px;
+    }
+
+    &__img {
+        margin-bottom: 15px;
+    }
+
+    &__title {
+        font-family: 'Roboto Slab', sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 25px;
+        color: #262D33;
+        margin-bottom: 5px;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #4B5157;
+        margin-bottom: 20px;
+    }
+
+    &__price {
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 30px;
+        color: #262D33;
+    }
+}
+
+.footer {
+    padding: 45px 0 35px;
+    background: #8F79D4;
+
+    &__container {
+        margin-bottom: 44px;
+    }
+
+    .divider {
+        display: block;
+        margin-bottom: 25px;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #E7D9FF;
+        margin-right: 30px;
+
+
+    }
+
+    &__link-1 {
+        margin-right: 21px;
+    }
+
+    &__link-2 {
+        margin-right: 17.5px;
+    }
+
+    .column {
+        position: relative;
+    }
+
+    .column__inscription {
+        font-weight: 900;
+        font-size: 14px;
+        line-height: 20px;
+        color: #FFFFFF;
+        position: absolute;
+        left: -27px;
+        top: 50%;
+        transform: translateY(-70%);
+    }
+
 }
